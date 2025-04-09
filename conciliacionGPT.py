@@ -18,9 +18,9 @@ def run_conciliacion(df_RB, df_LB, Debe_RB, Haber_RB, Debe_LB, Haber_LB):
             en_df2.append(False)
 
     df1['En_df2'] = en_df2
-    df1p1_filtrado = df1[df1['En_df2'] == False]
-    df1p1final = df1p1_filtrado[[col for col in df1.columns if 'clasificacion' in col.lower() or 'debit' in col.lower()]]
-    dfpaso1 = df1p1final
+    #df1p1_filtrado = df1[df1['En_df2'] == False]
+    #df1p1final = df1p1_filtrado[[col for col in df1.columns if 'clasificacion' in col.lower() or 'debit' in col.lower()]]
+    dfpaso1 = df1
 
     # ||||| PASO 2 |||||
     freq_df1 = df1[Debe_RB].value_counts().to_dict()
@@ -36,7 +36,7 @@ def run_conciliacion(df_RB, df_LB, Debe_RB, Haber_RB, Debe_LB, Haber_LB):
     df2['En_df1'] = en_df1
     df2p2_filtrado = df2[df2['En_df1'] == False]
     df2p2final = df2p2_filtrado[[col for col in df2.columns if 'clasificacion' in col.lower() or 'haber' in col.lower()]]
-    dfpaso2 = df2p2final
+    dfpaso2 = df2
 
     # ||||| PASO 3 |||||
     freq_df2 = df2[Debe_LB].value_counts().to_dict()
@@ -52,7 +52,7 @@ def run_conciliacion(df_RB, df_LB, Debe_RB, Haber_RB, Debe_LB, Haber_LB):
     df1['En_df2_p3'] = en_df2
     df1p3_filtrado = df1[df1['En_df2_p3'] == False]
     df1p3final = df1p3_filtrado[[col for col in df1.columns if 'clasificacion' in col.lower() or 'credito' in col.lower()]]
-    dfpaso3 = df1p3final
+    dfpaso3 = df1
 
     # ||||| PASO 4 |||||
     freq_df1 = df1[Haber_RB].value_counts().to_dict()
@@ -68,7 +68,7 @@ def run_conciliacion(df_RB, df_LB, Debe_RB, Haber_RB, Debe_LB, Haber_LB):
     df2['En_df1_p4'] = en_df1
     df2p4_filtrado = df2[df2['En_df1_p4'] == False]
     df2p4final = df2p4_filtrado[[col for col in df2.columns if 'clasificacion' in col.lower() or 'debe' in col.lower()]]
-    dfpaso4 = df2p4final
+    dfpaso4 = df2
 
     # ||||| RESUMEN |||||
     # Columnas para sumar
