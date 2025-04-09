@@ -34,8 +34,8 @@ def run_conciliacion(df_RB, df_LB, Debe_RB, Haber_RB, Debe_LB, Haber_LB):
             en_df1.append(False)
 
     df2['En_df1'] = en_df1
-    df2p2_filtrado = df2[df2['En_df1'] == False]
-    df2p2final = df2p2_filtrado[[col for col in df2.columns if 'clasificacion' in col.lower() or 'haber' in col.lower()]]
+    #df2p2_filtrado = df2[df2['En_df1'] == False]
+    #df2p2final = df2p2_filtrado[[col for col in df2.columns if 'clasificacion' in col.lower() or 'haber' in col.lower()]]
     dfpaso2 = df2
 
     # ||||| PASO 3 |||||
@@ -50,8 +50,8 @@ def run_conciliacion(df_RB, df_LB, Debe_RB, Haber_RB, Debe_LB, Haber_LB):
             en_df2.append(False)
 
     df1['En_df2_p3'] = en_df2
-    df1p3_filtrado = df1[df1['En_df2_p3'] == False]
-    df1p3final = df1p3_filtrado[[col for col in df1.columns if 'clasificacion' in col.lower() or 'credito' in col.lower()]]
+    #df1p3_filtrado = df1[df1['En_df2_p3'] == False]
+    #df1p3final = df1p3_filtrado[[col for col in df1.columns if 'clasificacion' in col.lower() or 'credito' in col.lower()]]
     dfpaso3 = df1
 
     # ||||| PASO 4 |||||
@@ -66,8 +66,8 @@ def run_conciliacion(df_RB, df_LB, Debe_RB, Haber_RB, Debe_LB, Haber_LB):
             en_df1.append(False)
 
     df2['En_df1_p4'] = en_df1
-    df2p4_filtrado = df2[df2['En_df1_p4'] == False]
-    df2p4final = df2p4_filtrado[[col for col in df2.columns if 'clasificacion' in col.lower() or 'debe' in col.lower()]]
+    #df2p4_filtrado = df2[df2['En_df1_p4'] == False]
+    #df2p4final = df2p4_filtrado[[col for col in df2.columns if 'clasificacion' in col.lower() or 'debe' in col.lower()]]
     dfpaso4 = df2
 
     # ||||| RESUMEN |||||
